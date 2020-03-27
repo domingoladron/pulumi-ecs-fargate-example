@@ -1,0 +1,7 @@
+version: '3.4'
+services:
+  myapi.service:
+    image: ${DOCKER_REGISTRY-}myapiservice
+    build:
+      context: .
+      dockerfile: MyApi/MyApi.Service/AWS.Dockerfile

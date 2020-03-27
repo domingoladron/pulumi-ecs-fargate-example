@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  myapi.service:
+    build:
+      context: .
+      dockerfile: MyApi/MyApi.Service/LOCAL.Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "54412:80"
