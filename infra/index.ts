@@ -5,7 +5,7 @@ import {EcsCluster} from "./base/EcsCluster"
 
 
 //create an ECR repository for my code
-const repo = new EcrRepository("partstrader/spike/pulumi-ecs");
+const repo = new EcrRepository("my/spike/pulumi-ecs");
 
 //construct a simple ECS Cluster
 const myCluster = new EcsCluster("pulumi-ecs");
@@ -17,22 +17,19 @@ const listener = new awsx.lb.ApplicationListener("pulumi-ecs-primary", {
 });
 
 
-//create our ecs task (with docker build of container)
+//create our ecs task (with docker build of our container)
 const taskDefinition = new awsx.ecs.FargateTaskDefinition("pulumi-ecs-primary", {
     containers: {
         sampleapp: {
             image: awsx.ecs.Image.fromDockerBuild(repo, {
                     context: "../src/",
                     dockerfile: "../src/MyApi/MyApi.Service/AWS.Dockerfile",
-                   /* extraOptions: [
-                        `-t ${ repo.repositoryUrl }/partstrader/spike/pulumi-ecs-primary:1.2.2.3`
-                    ],*/
             }),
             portMappings: [listener],
             environment: [
                     {
                         name: "SOME_ENV_VARIABLE",
-                        value: "This Value"
+                        value: "SOME_VALUE"
                     }
                 ],
 
@@ -46,6 +43,6 @@ const fargateService = new awsx.ecs.FargateService("pulumi-ecs",
     {
         cluster: myCluster,
         desiredCount: 1,
-        //healthCheckGracePeriodSeconds: 10,
+        healthCheckGracePeriodSeconds: 10,
         taskDefinition: taskDefinition,
 });
