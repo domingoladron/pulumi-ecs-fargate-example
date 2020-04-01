@@ -10,5 +10,19 @@ An example of using Pulumi IaC and AWS to create an ECS Fargate cluster, service
 ## What to do?
 - Pull the source of this repo
 - Navigate to the infra directory
+- run 'npm install'
+- (optional) run 'pulumi config aws:region <aws-region>'
+- (optional) run 'pulumi config aws:profile <profile>'
 - run 'pulumi up'
+
+Confirm to create your stack, and watch the magic!
+
+Note:  You'll want to log into the AWS console to see what you've created
+
+
+## How to wrap up?
+- Navigate to the infra directory
+- run 'pulumi destroy'
+
+And confirm to destroy your stack
 
