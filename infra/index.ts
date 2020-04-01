@@ -1,14 +1,12 @@
 import * as awsx from "@pulumi/awsx";
-import * as docker from "@pulumi/docker"
-import {EcrRepository} from "./base/EcrRepository"
-import {EcsCluster} from "./base/EcsCluster"
+import { Repository } from "@pulumi/aws/ecr";
 
 
 //create an ECR repository for my code
-const repo = new EcrRepository("my/spike/pulumi-ecs");
+const repo = new Repository("my/spike/pulumi-ecs");
 
 //construct a simple ECS Cluster
-const myCluster = new EcsCluster("pulumi-ecs");
+const myCluster = new awsx.ecs.Cluster("pulumi-ecs");
 
 //let's create an alb
 const listener = new awsx.lb.ApplicationListener("pulumi-ecs-primary", { 
