@@ -44,3 +44,9 @@ const fargateService = new awsx.ecs.FargateService("pulumi-ecs",
         healthCheckGracePeriodSeconds: 10,
         taskDefinition: taskDefinition,
 });
+
+
+// Export the load balancer's address
+export const ecsTaskUrl = listener.endpoint.hostname;
+
+
