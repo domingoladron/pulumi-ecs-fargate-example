@@ -1,11 +1,18 @@
 {
-    "name": "PulumiEcsFargateExample",
+    "name": "pulumi-ecs-fargate-example",
+    "version": "1.0.0",
+    "license": "MIT",
+    "description": "An example of using Pulumi Typescript to deploy AWS ECS Fargate services",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/domingoladron/pulumi-ecs-fargate-example.git"
+    },
     "devDependencies": {
         "@types/node": "^8.0.0"
     },
     "dependencies": {
-        "@pulumi/pulumi": "^1.0.0",
-        "@pulumi/aws": "^1.0.0",
-        "@pulumi/awsx": "^0.18.10"
+        "@pulumi/aws": "^1.29.0",
+        "@pulumi/awsx": "^0.18.10",
+        "@pulumi/pulumi": "^1.14.0"
     }
 }

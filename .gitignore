@@ -359,3 +359,6 @@ MigrationBackup/
 ## NPM / Node ignores
 /bin/
 /node_modules/
+
+.vscode/
+infra/Pulumi.*.yaml
