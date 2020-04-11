@@ -24,6 +24,7 @@ const taskDefinition = new awsx.ecs.FargateTaskDefinition("pulumi-ecs-primary", 
                     dockerfile: "../src/MyApi/MyApi.Service/AWS.Dockerfile",
             }),
             portMappings: [listener],
+            //we can even add environment variables to our task's container
             environment: [
                     {
                         name: "SOME_ENV_VARIABLE",
