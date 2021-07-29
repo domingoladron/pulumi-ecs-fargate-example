@@ -1,5 +1,8 @@
 # Pulumi AWS ECS Fargate Example
 An example of using Pulumi IaC and AWS to create an ECS Fargate cluster, service, and task.  Sexy!
+From my Medium article
+
+https://medium.com/it-dead-inside/deploy-aws-fargate-clusters-with-pulumi-e06637e6821d
 
 ## How to get started?
 - Get yourself up and running with a free account from Pulumi => [Getting Started](https://www.pulumi.com/docs/get-started/)
