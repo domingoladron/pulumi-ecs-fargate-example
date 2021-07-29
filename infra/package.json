@@ -8,11 +8,11 @@
         "url": "https://github.com/domingoladron/pulumi-ecs-fargate-example.git"
     },
     "devDependencies": {
-        "@types/node": "^8.0.0"
+        "@types/node": "^16.4.6"
     },
     "dependencies": {
-        "@pulumi/aws": "^1.30.0",
-        "@pulumi/awsx": "^0.18.10",
-        "@pulumi/pulumi": "^1.14.0"
+        "@pulumi/aws": "^4.14.0",
+        "@pulumi/awsx": "^0.30.0",
+        "@pulumi/pulumi": "^3.9.0"
     }
 }
